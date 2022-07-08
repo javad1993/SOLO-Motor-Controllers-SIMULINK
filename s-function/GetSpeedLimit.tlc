@@ -1,5 +1,5 @@
 %% File : GetSpeedLimit.tlc
-%% Created : Thu May 05 19:23:50 2022
+%% Created : Fri Jul 08 16:46:43 2022
 %%
 %% Description: 
 %%   Simulink Coder wrapper functions interface generated for 
@@ -43,7 +43,7 @@
     #endif
     SFB_EXTERN_C void GetSpeedLimit_Start_wrapper_accel(void **pW);
     SFB_EXTERN_C void GetSpeedLimit_Outputs_wrapper_accel(const uint8_T *Address,
-			uint32_T *Result,
+			int32_T *Result,
 			int32_T *Error,
 			void **pW);
     SFB_EXTERN_C void GetSpeedLimit_Terminate_wrapper_accel(void **pW);
@@ -65,7 +65,7 @@
 
     extern void GetSpeedLimit_Start_wrapper(void **pW);
     extern void GetSpeedLimit_Outputs_wrapper(const uint8_T *Address,
-			uint32_T *Result,
+			int32_T *Result,
 			int32_T *Error,
 			void **pW);
     extern void GetSpeedLimit_Terminate_wrapper(void **pW);
@@ -73,7 +73,7 @@
     GetSpeedLimit_Start_wrapper(pW);
     }
     void GetSpeedLimit_Outputs_wrapper_accel(const uint8_T *Address,
-			uint32_T *Result,
+			int32_T *Result,
 			int32_T *Error,
 			void **pW){
     GetSpeedLimit_Outputs_wrapper(Address,
@@ -100,7 +100,7 @@
     extern void GetSpeedLimit_Start_wrapper(void **pW);
 
     extern void GetSpeedLimit_Outputs_wrapper(const uint8_T *Address,
-			uint32_T *Result,
+			int32_T *Result,
 			int32_T *Error,
 			void **pW);
 

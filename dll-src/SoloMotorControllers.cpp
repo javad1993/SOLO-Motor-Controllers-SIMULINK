@@ -118,7 +118,8 @@ To learn more please visit:  https://www.SOLOMotorControllers.com/
 //DEBUG
 #include <iostream>
 #include <conio.h>
-using std::cout, std::endl;
+using std::cout;
+using std::endl;
 
 SOLOMotorControllers::SOLOMotorControllers(unsigned char _addr, long _baudrate, long _millisecondsTimeout, int _packetFailureTrialAttempts)
 	:addr(_addr)
@@ -225,6 +226,7 @@ bool SOLOMotorControllers::serialSetup(unsigned char _addr, char* _portName, lon
 
 void SOLOMotorControllers::Disconnect()
 {
+	isConnected = false;
 	CloseHandle(hComm);
 }
 

@@ -46,7 +46,7 @@ pW[1] = GetProcAddress(pW[0], "_GetOutputPwmFrequencyKhz");
  *
  */
 void GetOutputPwmFrequencyKhz_Outputs_wrapper(const uint8_T *Address,
-			uint32_T *Result,
+			int32_T *Result,
 			int32_T *Error,
 			void **pW)
 {
@@ -59,7 +59,7 @@ void GetOutputPwmFrequencyKhz_Outputs_wrapper(const uint8_T *Address,
       y1[0].im = u1[0].im;
  */
     
-uint32_T (*func)(uint8_T, int32_T*);
+int32_T (*func)(uint8_T, int32_T*);
 func = pW[1];
 Result[0] = func(Address[0], Error);
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_END --- EDIT HERE TO _BEGIN */

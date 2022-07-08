@@ -26,7 +26,7 @@
  * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
  *  ------------------------------------------------------------------------- 
  *
- * Created: Wed May 04 11:39:38 2022
+ * Created: Fri Jul 08 16:57:13 2022
  */
 
 #define S_FUNCTION_LEVEL 2
@@ -55,7 +55,7 @@
 #define IN_PORT_1_NAME        Value
 #define INPUT_1_WIDTH         1
 #define INPUT_DIMS_1_COL      1
-#define INPUT_1_DTYPE         uint32_T
+#define INPUT_1_DTYPE         int32_T
 #define INPUT_1_COMPLEX       COMPLEX_NO
 #define IN_1_FRAME_BASED      FRAME_NO
 #define IN_1_BUS_BASED        0
@@ -126,7 +126,7 @@
 
 extern void SetIncrementalEncoderLines_Start_wrapper(void **pW);
 extern void SetIncrementalEncoderLines_Outputs_wrapper(const uint8_T *Address,
-			const uint32_T *Value,
+			const int32_T *Value,
 			boolean_T *Result,
 			int32_T *Error,
 			void **pW);
@@ -166,7 +166,7 @@ static void mdlInitializeSizes(SimStruct *S)
 
     /* Input Port 1 */
     ssSetInputPortWidth(S, 1, INPUT_1_WIDTH);
-    ssSetInputPortDataType(S, 1, SS_UINT32);
+    ssSetInputPortDataType(S, 1, SS_INT32);
     ssSetInputPortComplexSignal(S, 1, INPUT_1_COMPLEX);
     ssSetInputPortDirectFeedThrough(S, 1, INPUT_1_FEEDTHROUGH);
     ssSetInputPortRequiredContiguous(S, 1, 1); /*direct input signal access*/
@@ -250,7 +250,7 @@ static void mdlOutputs(SimStruct *S, int_T tid)
 {
     void **pW = ssGetPWork(S);
     const uint8_T *Address = (uint8_T *) ssGetInputPortRealSignal(S, 0);
-    const uint32_T *Value = (uint32_T *) ssGetInputPortRealSignal(S, 1);
+    const int32_T *Value = (int32_T *) ssGetInputPortRealSignal(S, 1);
     boolean_T *Result = (boolean_T *) ssGetOutputPortRealSignal(S, 0);
     int32_T *Error = (int32_T *) ssGetOutputPortRealSignal(S, 1);
 

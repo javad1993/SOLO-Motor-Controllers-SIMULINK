@@ -46,7 +46,7 @@ pW[1] = GetProcAddress(pW[0], "_SetIncrementalEncoderLines");
  *
  */
 void SetIncrementalEncoderLines_Outputs_wrapper(const uint8_T *Address,
-			const uint32_T *Value,
+			const int32_T *Value,
 			boolean_T *Result,
 			int32_T *Error,
 			void **pW)
@@ -60,7 +60,7 @@ void SetIncrementalEncoderLines_Outputs_wrapper(const uint8_T *Address,
       y1[0].im = u1[0].im;
  */
     
-boolean (*func)(uint8_T, uint32_T, int32_T*);
+boolean (*func)(uint8_T, int32_T, int32_T*);
 func = pW[1];
 Result[0] = func(Address[0], Value[0], Error);
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_END --- EDIT HERE TO _BEGIN */

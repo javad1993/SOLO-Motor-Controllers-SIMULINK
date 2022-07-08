@@ -1,5 +1,5 @@
 %% File : SetIncrementalEncoderLines.tlc
-%% Created : Wed May 04 11:39:38 2022
+%% Created : Fri Jul 08 16:57:13 2022
 %%
 %% Description: 
 %%   Simulink Coder wrapper functions interface generated for 
@@ -43,7 +43,7 @@
     #endif
     SFB_EXTERN_C void SetIncrementalEncoderLines_Start_wrapper_accel(void **pW);
     SFB_EXTERN_C void SetIncrementalEncoderLines_Outputs_wrapper_accel(const uint8_T *Address,
-			const uint32_T *Value,
+			const int32_T *Value,
 			boolean_T *Result,
 			int32_T *Error,
 			void **pW);
@@ -66,7 +66,7 @@
 
     extern void SetIncrementalEncoderLines_Start_wrapper(void **pW);
     extern void SetIncrementalEncoderLines_Outputs_wrapper(const uint8_T *Address,
-			const uint32_T *Value,
+			const int32_T *Value,
 			boolean_T *Result,
 			int32_T *Error,
 			void **pW);
@@ -75,7 +75,7 @@
     SetIncrementalEncoderLines_Start_wrapper(pW);
     }
     void SetIncrementalEncoderLines_Outputs_wrapper_accel(const uint8_T *Address,
-			const uint32_T *Value,
+			const int32_T *Value,
 			boolean_T *Result,
 			int32_T *Error,
 			void **pW){
@@ -104,7 +104,7 @@
     extern void SetIncrementalEncoderLines_Start_wrapper(void **pW);
 
     extern void SetIncrementalEncoderLines_Outputs_wrapper(const uint8_T *Address,
-			const uint32_T *Value,
+			const int32_T *Value,
 			boolean_T *Result,
 			int32_T *Error,
 			void **pW);

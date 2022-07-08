@@ -1,5 +1,5 @@
 %% File : GetSpeedReference.tlc
-%% Created : Thu May 05 18:32:31 2022
+%% Created : Fri Jul 08 17:16:48 2022
 %%
 %% Description: 
 %%   Simulink Coder wrapper functions interface generated for 
@@ -43,7 +43,7 @@
     #endif
     SFB_EXTERN_C void GetSpeedReference_Start_wrapper_accel(void **pW);
     SFB_EXTERN_C void GetSpeedReference_Outputs_wrapper_accel(const uint8_T *Address,
-			uint32_T *Result,
+			int32_T *Result,
 			int32_T *Error,
 			void **pW);
     SFB_EXTERN_C void GetSpeedReference_Terminate_wrapper_accel(void **pW);
@@ -65,7 +65,7 @@
 
     extern void GetSpeedReference_Start_wrapper(void **pW);
     extern void GetSpeedReference_Outputs_wrapper(const uint8_T *Address,
-			uint32_T *Result,
+			int32_T *Result,
 			int32_T *Error,
 			void **pW);
     extern void GetSpeedReference_Terminate_wrapper(void **pW);
@@ -73,7 +73,7 @@
     GetSpeedReference_Start_wrapper(pW);
     }
     void GetSpeedReference_Outputs_wrapper_accel(const uint8_T *Address,
-			uint32_T *Result,
+			int32_T *Result,
 			int32_T *Error,
 			void **pW){
     GetSpeedReference_Outputs_wrapper(Address,
@@ -100,7 +100,7 @@
     extern void GetSpeedReference_Start_wrapper(void **pW);
 
     extern void GetSpeedReference_Outputs_wrapper(const uint8_T *Address,
-			uint32_T *Result,
+			int32_T *Result,
 			int32_T *Error,
 			void **pW);
 

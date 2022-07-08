@@ -26,7 +26,7 @@
  * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
  *  ------------------------------------------------------------------------- 
  *
- * Created: Thu May 05 21:07:26 2022
+ * Created: Fri Jul 08 17:15:59 2022
  */
 
 #define S_FUNCTION_LEVEL 2
@@ -57,7 +57,7 @@
 #define OUT_PORT_0_NAME       Result
 #define OUTPUT_0_WIDTH        1
 #define OUTPUT_DIMS_0_COL     1
-#define OUTPUT_0_DTYPE        uint32_T
+#define OUTPUT_0_DTYPE        int32_T
 #define OUTPUT_0_COMPLEX      COMPLEX_NO
 #define OUT_0_FRAME_BASED     FRAME_NO
 #define OUT_0_BUS_BASED       0
@@ -109,7 +109,7 @@
 
 extern void GetDeviceHardwareVersion_Start_wrapper(void **pW);
 extern void GetDeviceHardwareVersion_Outputs_wrapper(const uint8_T *Address,
-			uint32_T *Result,
+			int32_T *Result,
 			int32_T *Error,
 			void **pW);
 extern void GetDeviceHardwareVersion_Terminate_wrapper(void **pW);
@@ -150,7 +150,7 @@ static void mdlInitializeSizes(SimStruct *S)
     if (!ssSetNumOutputPorts(S, NUM_OUTPUTS)) return;
     /* Output Port 0 */
     ssSetOutputPortWidth(S, 0, OUTPUT_0_WIDTH);
-    ssSetOutputPortDataType(S, 0, SS_UINT32);
+    ssSetOutputPortDataType(S, 0, SS_INT32);
     ssSetOutputPortComplexSignal(S, 0, OUTPUT_0_COMPLEX);
     /* Output Port 1 */
     ssSetOutputPortWidth(S, 1, OUTPUT_1_WIDTH);
@@ -225,7 +225,7 @@ static void mdlOutputs(SimStruct *S, int_T tid)
 {
     void **pW = ssGetPWork(S);
     const uint8_T *Address = (uint8_T *) ssGetInputPortRealSignal(S, 0);
-    uint32_T *Result = (uint32_T *) ssGetOutputPortRealSignal(S, 0);
+    int32_T *Result = (int32_T *) ssGetOutputPortRealSignal(S, 0);
     int32_T *Error = (int32_T *) ssGetOutputPortRealSignal(S, 1);
 
     GetDeviceHardwareVersion_Outputs_wrapper(Address, Result, Error, pW);
